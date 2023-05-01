@@ -1,0 +1,40 @@
+h1 {
+    color: black;
+}
+
+h2 {
+    color: black;
+}
+
+li a {
+    color: black;
+}
+
+label {
+    color: black;
+}
+
+ul {
+    color: black;
+}
+
+p {
+    color: black;
+}
+
+
+  html, body {
+  margin:0;
+  height:100%;
+  overflow-y: auto;
+}
+
+.bg-container {
+  background-image: url("images/background.jpg");
+  background-size:cover;
+  width:100%;
+  height:100%;
+
+}
+
+

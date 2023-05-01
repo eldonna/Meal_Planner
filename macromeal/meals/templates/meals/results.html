@@ -1,0 +1,35 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'meals/style.css' %}">
+
+<div class="bg-container">
+
+<h1>{{ "MacroMeal" }}</h1>
+
+<h2>{{ "Here are the meals you requested"  }}</h2>
+
+<div>
+    {% for mealinfo in meals_list.meals %}
+    <p> {{ mealinfo.dayofweek  }}</p>
+    <p> {{ mealinfo.meal.meal_name}}</p>
+    <p> Prep Time: {{ mealinfo.meal.prep_time}} </p>
+    <p> Servings: {{ mealinfo.meal.servings}} </p>
+    <p> Ingredients: {{ mealinfo.meal.ingredients}} </p>
+    <p> Directions: {{ mealinfo.meal.directions}} </p>
+    <p> Total Calories: {{ mealinfo.nutrition.total_calories}}</p>
+    <p> Fat(g): {{ mealinfo.nutrition.fat_grams}}</p>
+    <p> Carb(g): {{ mealinfo.nutrition.carb_grams}}</p>
+    <p> Protein(g): {{ mealinfo.nutrition.protein_grams}}</p>
+    <p> {{ mealinfo.meal.image}} </p>
+    <p> *****************************************************</p>
+
+  {% endfor %}
+</div>
+
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.searches }} search{{ choice.searches|pluralize }}</li>
+{% endfor %}
+</ul>
+
+</div>
